@@ -29,7 +29,7 @@ app.configure('production', () ->
 
 app.get('/', (req, res) ->
   res.render('index', {
-    title: 'Express'
+    title: 'Billboard'
   })
 )
 
