@@ -21,7 +21,7 @@
   });
   app.get('/', function(req, res) {
     return res.render('index', {
-      title: 'Billboard'
+      title: 'MoBillboard'
     });
   });
   port = process.env.PORT || 3000;
