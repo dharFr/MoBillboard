@@ -10,7 +10,7 @@ module.exports = {
         places.get(req.body.placeId, (place) ->
           if place
             Billboard.create(place, (err, inserted) ->
-              res.send(inserted)
+              res.send(inserted[0])
             )
           else
             res.send(404)

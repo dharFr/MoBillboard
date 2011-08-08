@@ -7,8 +7,14 @@ require('express-resource')
 
 config = require('./config')
 
+mongoUrl = process.env.MONGOLAB_URI || "localhost:27017/mobillboard"
+
+mongoUrl = mongoUrl + '?auto_reconnect'
+
+console.log "Using mongo URL #{mongoUrl}"
+
 # init DB
-require('./lib/db').init(config.mongo)
+require('./lib/db').init(mongoUrl)
 
 # init modules
 require('./lib/places').init(config.foursquare)

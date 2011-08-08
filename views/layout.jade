@@ -1,6 +1,17 @@
 !!!
 html
   head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=default-width; user-scalable=no')
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
+    script(src="libs/jquery-1.6.2.min.js")
+    script(src="libs/underscore.js")
+    script(src="libs/backbone.js")
+    link(rel='stylesheet', href='libs/jquery.mobile-1.0b1/jquery.mobile-1.0b1.css')
+    script(src="libs/jquery.mobile-1.0b1/jquery.mobile-1.0b1.js")
+    script(src='js/application.js')
+  body
+    div(data-role='page', id='home')
+      div(data-role='header')
+        h1= title
+      div(data-role="content")!= body

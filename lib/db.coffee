@@ -5,8 +5,8 @@ db = null
 
 
 module.exports = {
-  init: (config) ->
-    db = mongo.db(config.url)
+  init: (url) ->
+    db = mongo.db(url)
 
   db: () ->
     return db
