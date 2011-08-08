@@ -3,10 +3,19 @@
 # Module dependencies.
 
 express = require('express')
+require('express-resource')
 
-app = module.exports = express.createServer()
+config = require('./config')
+
+# init DB
+require('./lib/db').init(config.mongo)
+
+# init modules
+require('./lib/places').init(config.foursquare)
 
 # Configuration
+app = module.exports = express.createServer()
+
 
 app.configure(() ->
   app.set('views', __dirname + '/views')
@@ -33,4 +42,5 @@ app.get('/', (req, res) ->
   })
 )
 
+app.resource("billboards", require('./resources/billboards'), { format: 'json' })
 

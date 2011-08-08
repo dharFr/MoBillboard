@@ -1,7 +1,5 @@
 
-config = require('./config').foursquare
-
-venues = require('node-foursquare')(config).Venues
+venues = null
 
 # Foursquare data cleanup. Returns only interesting fields.
 cleanupVenue = (data) ->
@@ -23,9 +21,11 @@ get = (id, callback) ->
   )
 
 
-module.exports = { "get": get }
+module.exports = {
+  init: (config) ->
+    venues = require('node-foursquare')(config).Venues
 
-
-
+  get: get
+}
 
 
