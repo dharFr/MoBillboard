@@ -1,3 +1,10 @@
 h1. MoBillboard
 
-TODO
+h2. Create billboard for L'Australian
+
+bc. curl -d placeId=4cbec4578db3b60c96107478  localhost:3000/billboards
+
+h2. Get billboard with Id <id>
+
+bc. curl localhost:3000/billboards/<id>
+

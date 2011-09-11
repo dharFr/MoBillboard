@@ -3,10 +3,25 @@
 # Module dependencies.
 
 express = require('express')
+require('express-resource')
 
-app = module.exports = express.createServer()
+config = require('./config')
+
+mongoUrl = process.env.MONGOLAB_URI || "localhost:27017/mobillboard"
+
+mongoUrl = mongoUrl + '?auto_reconnect'
+
+console.log "Using mongo URL #{mongoUrl}"
+
+# init DB
+require('./lib/db').init(mongoUrl)
+
+# init modules
+require('./lib/places').init(config.foursquare)
 
 # Configuration
+app = module.exports = express.createServer()
+
 
 app.configure(() ->
   app.set('views', __dirname + '/views')
@@ -38,4 +53,5 @@ app.get('/prototype', (req, res) ->
 		title: 'MoBillboard Prototype'
 	})
 )
+app.resource("billboards", require('./resources/billboards'), { format: 'json' })
 
