@@ -1,17 +1,25 @@
-!!!
-html
+!!! 5
+html(manifest='manifest.appcache')
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=default-width; user-scalable=no')
+    meta(name='viewport', content='width=device-width; initial-scale=1, user-scalable=no')
     title= title
-    script(src="libs/jquery-1.6.2.min.js")
-    script(src="libs/underscore.js")
-    script(src="libs/backbone.js")
-    link(rel='stylesheet', href='libs/jquery.mobile-1.0b1/jquery.mobile-1.0b1.css')
-    script(src="libs/jquery.mobile-1.0b1/jquery.mobile-1.0b1.js")
-    script(src='js/application.js')
-  body
-    div(data-role='page', id='home')
-      div(data-role='header')
-        h1= title
-      div(data-role="content")!= body
+    link(rel='shortcut', href='images/appicon.png')
+    link(rel='stylesheet', href='http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css')
+    link(rel='stylesheet', href='css/style.css')
+  body(lang='en')!= body
+  
+    / Script Managment
+    script(src='http://ajax.cdnjs.com/ajax/libs/labjs/1.2.0/LAB.min.js')
+    script(type='text/javascript')
+        $LAB
+        .setOptions({AlwaysPreserveOrder:true})
+        .script('http://code.jquery.com/jquery-1.6.2.min.js')
+        .script('http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js')
+        .script('libs/underscore-min.js')
+        .script('libs/backbone-min.js')
+        .wait(function() {
+          if (initPage) initPage();
+        })
+        //.script('js/application.js')
+    

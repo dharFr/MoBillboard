@@ -1,0 +1,42 @@
+h6.address {
+	height: 60px;
+	text-align: center;
+	margin: -15px auto;
+}
+h6.address .small {
+	font-weight: normal;
+}
+
+.note-info {
+	background: #F0F0F0;
+	
+	border: 1px solid #DEDEDE;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.note-info img {
+	float: left;
+	width: 72px;
+	height: 72px;
+	margin: 5px;
+	margin-right: 15px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-ms-border-radius: 6px;
+	border-radius: 6px;
+}
+.ui-li .ui-btn-inner a.ui-link-inherit  {
+    padding: 0.7em 45px 0.7em 15px;
+}
+.ui-li-aside {
+	width: auto;
+}
+h4.note-title {
+	margin: 5px 0;
+}
+.note-content {
+	margin: 0 10px;
+}

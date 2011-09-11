@@ -33,4 +33,9 @@ app.get('/', (req, res) ->
   })
 )
 
+app.get('/prototype', (req, res) ->
+	res.render('prototype', {
+		title: 'MoBillboard Prototype'
+	})
+)
 

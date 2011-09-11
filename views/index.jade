@@ -1,1 +1,10 @@
-p Welcome to #{title}
+div(data-role='page', id='home')
+  div(data-role='header')
+    h1= title
+  div(data-role='content')
+    p Welcome to #{title}
+
+script(type='text/javascript')
+  function initPage() {
+    $LAB.script('js/application.js');
+  }

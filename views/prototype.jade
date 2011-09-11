@@ -1,0 +1,80 @@
+div(data-role='page', id='home')
+  div(data-role='header')
+    h1= title
+  div(data-role='content')
+    h6(class="address")
+      a(href="#chooseVenue", data-icon="arrow-r", data-iconpos="right", data-role="button")
+        | Are you at Extelia?
+        br
+        span(class="small") rue du Vallon, Sophia-Antipolis
+    ul(data-role="listview", data-theme="c", data-filter="false")
+      li
+        a(href="#details")
+          p(class="ui-li-aside")
+            | by
+            strong jfaissole
+            |  at 
+            strong 13:32
+          h3 Example Note 1 
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies commodo enim, id dapibus justo mattis at.
+      li
+        a(href="#details")
+          p(class="ui-li-aside")
+            | by
+            strong oaudard
+            br
+            |  at 
+            strong 14:26
+          h3 Example Note 2 
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies commodo enim, id dapibus justo mattis at.
+      li
+        a(href="#details")
+          h5 Example Note 3 
+          p
+            | by
+            strong dpedro
+            |  at 
+            strong 11:06
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies commodo enim, id dapibus justo mattis at.
+      li
+        a(href="#details")
+          h3 Example Note 4 
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies commodo enim, id dapibus justo mattis at.
+          p
+            | by
+            strong mmezerette
+            |  at 
+            strong 09:43
+
+div(data-role='page', id='chooseVenue')
+  div(data-role='header')
+    a(href='#home', data-icon='delete') Cancel
+    h1 Select Location
+  div(data-role='content')
+    ul(data-role="listview", data-theme="c", data-filter="true", data-filter-placeholder='Search for a nearby location...')
+      li(data-icon="check", data-iconpos="left")
+        a(href='#home') Extelia
+      li(data-icon="check", data-iconpos='left')
+        a(href='#home') Amadeus
+      li(data-icon="check", data-iconpos="left")
+        a(href='#home') Collège de L'Eganaude
+      li(data-icon="check", data-iconpos="left")
+        a(href='#home') Restaurant L'Eganaude
+
+div(data-role='page', id='details')
+  div(data-role='header')
+    h1= title
+  div(data-role='content')
+    h4(class="note-title") Example Note
+    div(class="note-info")
+      img(src="http://a2.twimg.com/profile_images/1270819530/me_reasonably_small.jpeg", class="user-thumb")
+      p by 
+        strong jfaissole
+      p on 
+        strong 01 June 2011, 13:32
+   div(class="note-content")
+     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum condimentum metus ac fringilla. Vivamus scelerisque, mauris id tincidunt vestibulum, sapien lectus ultrices tellus, cursus laoreet nisi dolor in justo. Aenean eros ante, vulputate sed blandit at, blandit sed felis. 
